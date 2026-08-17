@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   keywords:
     "eVisitor, subclass 651, Australia visa, ETA subclass 601, Australian visitor visa, free Australian visa, European passport",
   robots: { index: true, follow: true },
+  /** ⚠️ Search Consoleの所有権確認はMETA方式。
+   *  FILE方式は trailingSlash:true のせいで /googleXXXX.html が308になり使えなかった。 */
+  verification: { google: "3TYln4d1lpm1cITjE989pRaDpDBiADp_aA40JjboLIY" },
   openGraph: {
     title: "Australia eVisitor Guide — the free visa for European passports",
     description:
