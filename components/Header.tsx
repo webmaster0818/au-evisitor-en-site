@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FACTS as F } from "@/data/facts";
+import { LANGS, LANG_CODES } from "@/data/langs";
 
 /** ヘッダー。まだTOPのみの段階なので、下層ページのリンクは増やさない。
     ⚠️ リンク先の無いメニューを並べると404を作るので、ページを作った分だけ足す。 */
@@ -15,6 +16,17 @@ export default function Header() {
             Australia · eVisitor visa (subclass 651)
           </span>
         </Link>
+        <div className="flex items-center gap-4">
+          {LANG_CODES.length > 0 && (
+            <nav className="hidden sm:flex items-center gap-2 text-xs" aria-label="Language">
+              <Link href="/" style={{ color: "rgba(255,255,255,.85)" }}>EN</Link>
+              {LANG_CODES.map((c) => (
+                <Link key={c} href={`/${c}/`} style={{ color: "rgba(255,255,255,.85)" }}>
+                  {LANGS[c].label}
+                </Link>
+              ))}
+            </nav>
+          )}
         <a
           href={F.officialUrl}
           target="_blank"
@@ -24,6 +36,7 @@ export default function Header() {
         >
           Official site
         </a>
+        </div>
       </div>
     </header>
   );

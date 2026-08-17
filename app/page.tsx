@@ -3,6 +3,7 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import StickyCta from "@/components/StickyCta";
 import { FACTS as F, SITE } from "@/data/facts";
+import { LANG_CODES } from "@/data/langs";
 
 /*
   構成・UIは nz-eta-site（NZeTA）と揃えている。okinaの指摘済み事項は最初から反映:
@@ -25,7 +26,11 @@ export const metadata: Metadata = {
   },
   description:
     `A plain-English guide to Australia's eVisitor visa (subclass 651): free of charge, valid ${F.validMonths} months, stays of up to ${F.stayMonths} months per entry, for passport holders of ${F.eligibleCountries} European countries. If your passport is not on the list, you need the ${F.etaFee} ETA instead.`,
-  alternates: { canonical: `${SITE}/` },
+  alternates: {
+    canonical: `${SITE}/`,
+    // ⚠️ 言語版を足したら自動で増える（手書きしない）
+    languages: { en: `${SITE}/`, ...Object.fromEntries(LANG_CODES.map((c) => [c, `${SITE}/${c}/`])) },
+  },
   openGraph: {
     title: "eVisitor (subclass 651): the free Australian visa for European passports",
     description: `Free of charge, valid ${F.validMonths} months, up to ${F.stayMonths} months per entry — and how it differs from the ${F.etaFee} ETA.`,
