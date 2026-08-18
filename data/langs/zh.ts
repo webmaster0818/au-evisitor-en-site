@@ -78,7 +78,7 @@ export const zh: LangContent = {
       ],
       ["两者都不适用", "访客签证（subclass 600）", "收费", "内政事务部网站"],
     ],
-    note: `eVisitor 没有应用、只能用网站；ETA 没有网站、只能用应用。方向弄反就无法开始申请。核对日：${F.updatedLabel}。`,
+    note: `eVisitor 没有应用、只能用网站；ETA 没有网站、只能用应用。方向弄反就无法开始申请。核对日：2026年8月17日。`,
   },
   steps: {
     h2: "ETA 申请步骤",
@@ -171,6 +171,7 @@ export const zh: LangContent = {
     languages: "语言",
     articles: "相关内容",
     readMore: "查看详情",
+    updatedLabel: "2026年8月17日",
   },
   pages: [
     {

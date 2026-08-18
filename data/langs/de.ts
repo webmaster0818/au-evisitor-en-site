@@ -78,7 +78,7 @@ export const de: LangContent = {
       ],
       ["Für beides nicht berechtigt", "Besuchervisum (Subclass 600)", "gebührenpflichtig", "Website des Department of Home Affairs"],
     ],
-    note: `Die ETA lässt sich nicht über die Website beantragen, sondern nur über die offizielle App, die den Chip im Pass ausliest. Beim eVisitor ist es umgekehrt: keine App, nur die Website. Geprüft am ${F.updatedLabel}.`,
+    note: `Die ETA lässt sich nicht über die Website beantragen, sondern nur über die offizielle App, die den Chip im Pass ausliest. Beim eVisitor ist es umgekehrt: keine App, nur die Website. Geprüft am 17. August 2026.`,
   },
   steps: {
     h2: "So beantragen Sie das eVisitor",
@@ -171,6 +171,7 @@ export const de: LangContent = {
     languages: "Sprache",
     articles: "Weitere Themen",
     readMore: "Weiterlesen",
+    updatedLabel: "17. August 2026",
   },
   pages: [
     {
@@ -348,7 +349,7 @@ export const de: LangContent = {
           p: "Mit einem deutschen Pass beantragen Sie das eVisitor und zahlen nichts. Reisen Sie gemeinsam mit einer Person, die einen nicht-europäischen Pass hat, braucht diese Person die ETA und damit ein Smartphone mit NFC – planen Sie das ein, wenn Sie zusammen buchen.",
         },
         {
-          note: `Wer für beides nicht berechtigt ist, benötigt das gebührenpflichtige Besuchervisum (Subclass 600). Stand: ${F.updatedLabel}.`,
+          note: `Wer für beides nicht berechtigt ist, benötigt das gebührenpflichtige Besuchervisum (Subclass 600). Stand: 17. August 2026.`,
         },
       ],
     },

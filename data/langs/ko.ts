@@ -79,7 +79,7 @@ export const ko: LangContent = {
       ],
       ["위 두 가지에 모두 해당하지 않는 경우", "방문 비자(subclass 600)", "유료", "내무부 웹사이트"],
     ],
-    note: `eVisitor는 앱이 없고 웹사이트만, ETA는 웹사이트가 없고 앱만 사용합니다. 반대로 알고 있으면 신청 자체를 시작할 수 없습니다. 확인일: ${F.updatedLabel}.`,
+    note: `eVisitor는 앱이 없고 웹사이트만, ETA는 웹사이트가 없고 앱만 사용합니다. 반대로 알고 있으면 신청 자체를 시작할 수 없습니다. 확인일: 2026년 8월 17일.`,
   },
   steps: {
     h2: "ETA 신청 순서",
@@ -172,6 +172,7 @@ export const ko: LangContent = {
     languages: "언어",
     articles: "관련 안내",
     readMore: "자세히 보기",
+    updatedLabel: "2026년 8월 17일",
   },
   pages: [
     {
