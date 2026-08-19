@@ -3,7 +3,9 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import StickyCta from "@/components/StickyCta";
 import { FACTS as F, SITE } from "@/data/facts";
+import Link from "next/link";
 import { LANG_CODES } from "@/data/langs";
+import { PAGES } from "@/data/pages";
 
 /*
   構成・UIは nz-eta-site（NZeTA）と揃えている。okinaの指摘済み事項は最初から反映:
@@ -367,6 +369,24 @@ export default function Home() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── 下層ページへの導線 ── */}
+      <section className="max-w-5xl mx-auto px-6 py-16 md:py-20">
+        <h2 className="heading-band text-2xl md:text-3xl reveal">Read more about the eVisitor</h2>
+        <div className="mt-8 grid md:grid-cols-3 gap-5">
+          {PAGES.filter((p) => !["privacy", "terms", "about"].includes(p.slug)).map((p, i) => (
+            <Link key={p.slug} href={`/${p.slug}/`} className={`feature-card no-underline reveal reveal-delay-${(i % 4) + 1}`}>
+              <h3 className="font-bold" style={{ color: "var(--color-navy)" }}>{p.nav}</h3>
+              <p className="mt-2 text-sm leading-relaxed">{p.description}</p>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-8 flex flex-wrap gap-4 text-xs reveal">
+          {PAGES.filter((p) => ["about", "privacy", "terms"].includes(p.slug)).map((p) => (
+            <Link key={p.slug} href={`/${p.slug}/`}>{p.nav}</Link>
+          ))}
         </div>
       </section>
 

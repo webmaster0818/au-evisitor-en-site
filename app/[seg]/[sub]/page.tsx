@@ -13,10 +13,10 @@ import { LANGS, LANG_CODES } from "@/data/langs";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  const out: Array<{ lang: string; slug: string }> = [];
+  const out: Array<{ seg: string; sub: string }> = [];
   for (const lang of LANG_CODES) {
     const t = LANGS[lang];
-    for (const a of [...t.articles, ...t.pages]) out.push({ lang, slug: a.slug });
+    for (const a of [...t.articles, ...t.pages]) out.push({ seg: lang, sub: a.slug });
   }
   return out;
 }
@@ -27,8 +27,8 @@ function find(lang: string, slug: string) {
   return { t, doc, isArticle: t.articles.some((a) => a.slug === slug) };
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
-  const { lang, slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ seg: string; sub: string }> }): Promise<Metadata> {
+  const { seg: lang, sub: slug } = await params;
   const { doc } = find(lang, slug);
   if (!doc) return {};
   return {
@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
-export default async function LangDoc({ params }: { params: Promise<{ lang: string; slug: string }> }) {
-  const { lang, slug } = await params;
+export default async function LangDoc({ params }: { params: Promise<{ seg: string; sub: string }> }) {
+  const { seg: lang, sub: slug } = await params;
   const { t, doc, isArticle } = find(lang, slug);
   if (!doc) return null;
 
